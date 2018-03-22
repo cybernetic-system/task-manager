@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "48efcf2b6f166687242ae2d4279fd216",
+    "content-hash": "38f5c4d11cef9b05967e2376870d84bb",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -112,16 +112,16 @@
         },
         {
             "name": "backpack/crud",
-            "version": "3.3.14",
+            "version": "3.3.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/CRUD.git",
-                "reference": "4039e0c4b5b831ace86b39cfdc9ceeab1f880afa"
+                "reference": "dade164f74d34943ac935f0af98c5da546a7a8c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/4039e0c4b5b831ace86b39cfdc9ceeab1f880afa",
-                "reference": "4039e0c4b5b831ace86b39cfdc9ceeab1f880afa",
+                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/dade164f74d34943ac935f0af98c5da546a7a8c4",
+                "reference": "dade164f74d34943ac935f0af98c5da546a7a8c4",
                 "shasum": ""
             },
             "require": {
@@ -182,83 +182,7 @@
                 "read",
                 "update"
             ],
-            "time": "2018-03-16T07:12:28+00:00"
-        },
-        {
-            "name": "backpack/langfilemanager",
-            "version": "1.0.25",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Laravel-Backpack/LangFileManager.git",
-                "reference": "9923207c184ac4c2ba9c4b49290eb1e87c9e981e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/LangFileManager/zipball/9923207c184ac4c2ba9c4b49290eb1e87c9e981e",
-                "reference": "9923207c184ac4c2ba9c4b49290eb1e87c9e981e",
-                "shasum": ""
-            },
-            "require": {
-                "backpack/crud": "^3.0.6",
-                "illuminate/support": "~5.1",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Backpack\\LangFileManager\\LangFileManagerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Backpack\\LangFileManager\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alin Ghitu",
-                    "email": "alin@updivision.com",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Cristian Tabacitu",
-                    "email": "hello@tabacitu.ro",
-                    "homepage": "http://www.tabacitu.ro",
-                    "role": "Contributor"
-                }
-            ],
-            "description": "An interface to edit language files, for Laravel Backpack.",
-            "homepage": "https://github.com/laravel-backpack/langfilemanager",
-            "keywords": [
-                "admin panel",
-                "backpack",
-                "dick",
-                "dick admin",
-                "dick translationmanager",
-                "dickadmin",
-                "lang file manager",
-                "lang files",
-                "language",
-                "laravel",
-                "laravel backpack",
-                "tabacitu",
-                "translationmanager",
-                "updivision"
-            ],
-            "time": "2018-03-05T12:30:19+00:00"
+            "time": "2018-03-21T17:06:28+00:00"
         },
         {
             "name": "backpack/permissionmanager",
@@ -2580,16 +2504,16 @@
         },
         {
             "name": "studio-42/elfinder",
-            "version": "2.1.34",
+            "version": "2.1.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Studio-42/elFinder.git",
-                "reference": "e81438beb745bf1171bc6f01843265da9ba37756"
+                "reference": "6ae2d6a826b2bd42035df63857a0ba80c7033baa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/e81438beb745bf1171bc6f01843265da9ba37756",
-                "reference": "e81438beb745bf1171bc6f01843265da9ba37756",
+                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/6ae2d6a826b2bd42035df63857a0ba80c7033baa",
+                "reference": "6ae2d6a826b2bd42035df63857a0ba80c7033baa",
                 "shasum": ""
             },
             "require": {
@@ -2634,7 +2558,7 @@
             ],
             "description": "File manager for web",
             "homepage": "http://elfinder.org",
-            "time": "2018-03-18T05:59:56+00:00"
+            "time": "2018-03-21T14:17:40+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
