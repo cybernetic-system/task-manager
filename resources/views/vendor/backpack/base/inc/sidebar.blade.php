@@ -13,7 +13,10 @@
           <!-- ==== Recommended place for admin menu items ==== -->
           <!-- ================================================ -->
           <li><a href="{{ backpack_url('dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
+              {{-- tasks --}}
               <li><a href="{{ route('crud.task.index') }}"><i class="fa fa-tasks"></i> <span>{{trans('backpack::sidebar.tasks')}}</span></a></li>
+              {{-- task statuses --}}
+              <li><a href="{{ route('crud.task_status.index') }}"><i class="fa fa-list-ol"></i> <span>{{trans('backpack::sidebar.task_statuses')}}</span></a></li>
               <!-- Users, Roles Permissions -->
               <li class="treeview">
                   <a href="#"><i class="fa fa-group"></i> <span>Users, Roles, Permissions</span> <i class="fa fa-angle-left pull-right"></i></a>

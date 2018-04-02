@@ -1,4 +1,5 @@
 <?php
 return [
-  'tasks' => 'Задачи'
+    'tasks' => 'Задачи',
+    'task_statuses' => 'Статусы задач',
 ];

@@ -11,4 +11,6 @@ return [
     'spent' => 'Затрачено',
     'running' => 'Запущено',
     'status' => 'Статус',
+    'description' => 'Описание',
+    'symbolic_code' => 'Символьный код',
 ];

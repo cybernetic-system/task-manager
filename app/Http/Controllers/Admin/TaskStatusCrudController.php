@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\TaskRequest as StoreRequest;
-use App\Http\Requests\TaskRequest as UpdateRequest;
+use App\Http\Requests\TaskStatusRequest as StoreRequest;
+use App\Http\Requests\TaskStatusRequest as UpdateRequest;
 
-class TaskCrudController extends CrudController
+class TaskStatusCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class TaskCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Task');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/task');
-        $this->crud->setEntityNameStrings('task', 'tasks');
+        $this->crud->setModel('App\Models\TaskStatus');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/task_status');
+        $this->crud->setEntityNameStrings('task_status', 'task_statuses');
 
         /*
         |--------------------------------------------------------------------------
@@ -36,32 +36,17 @@ class TaskCrudController extends CrudController
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
         $this->crud->addFields([
-            //'description','time_laid','time_spend','last_time_start','start_status','status_id','priority_id','user_id','group_id'
             [
                 'name' => 'name',
                 'label' => trans('field.appellation'),
-            ],
+            ] ,
             [
-                'name' => 'description',
-                'label' => trans('field.description'),
-                'type' => 'textarea',
-            ],
-            [
-                'name' => 'time_laid',
-                'label' => trans('field.laid'),
-            ],
-            [
-                'name' => 'time spend',
-                'label' => trans('field.spent'),
-            ],
-            [
-                'name' => 'status',
-                'label' => trans('field.status'),
-                'entity' => 'status',
-                'attribute' => 'name',
-                'type' => 'select2',
-            ],
+                'name' => 'slug',
+                'label' => trans('field.symbolic_code'),
+                'hint' => 'Поле моежт содержать только латинские буквы и дефисы'
+            ] ,
         ]);
+
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
@@ -70,31 +55,14 @@ class TaskCrudController extends CrudController
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
         $this->crud->addColumns([
-            //'description','time_laid','time_spend','last_time_start','start_status','status_id','priority_id','user_id','group_id'
             [
                 'name' => 'name',
                 'label' => trans('field.appellation'),
-            ],
-            [
-                'name' => 'time_laid',
-                'label' => trans('field.laid'),
-            ],
-            [
-                'name' => 'time spend',
-                'label' => trans('field.spent'),
-            ],
-            [
-                'name' => 'start_status',
-                'label' => trans('field.running'),
-                'type' => 'check',
-            ],
-            [
-                'name' => 'status_id',
-                'label' => trans('field.status'),
-                'entity' => 'status',
-                'attribute' => 'name',
-                'type' => 'select',
-            ],
+            ] ,
+           [
+               'name' => 'slug',
+               'label' => trans('field.symbolic_code'),
+           ] ,
         ]);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
@@ -109,6 +77,7 @@ class TaskCrudController extends CrudController
         // ------ CRUD ACCESS
         // $this->crud->allowAccess(['list', 'create', 'update', 'reorder', 'delete']);
         // $this->crud->denyAccess(['list', 'create', 'update', 'reorder', 'delete']);
+        $this->crud->denyAccess(['create', 'update', 'reorder', 'delete']);
 
         // ------ CRUD REORDER
         // $this->crud->enableReorder('label_name', MAX_TREE_LEVEL);
