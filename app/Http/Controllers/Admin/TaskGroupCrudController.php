@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\TaskRequest as StoreRequest;
-use App\Http\Requests\TaskRequest as UpdateRequest;
+use App\Http\Requests\TaskGroupRequest as StoreRequest;
+use App\Http\Requests\TaskGroupRequest as UpdateRequest;
 
-class TaskCrudController extends CrudController
+class TaskGroupCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class TaskCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Task');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/task');
-        $this->crud->setEntityNameStrings('task', 'tasks');
+        $this->crud->setModel('App\Models\TaskGroup');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/task_group');
+        $this->crud->setEntityNameStrings('task_group', 'task_groups');
 
         /*
         |--------------------------------------------------------------------------
@@ -36,56 +36,23 @@ class TaskCrudController extends CrudController
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
         $this->crud->addFields([
-            //'description','time_laid','time_spend','last_time_start','start_status','status_id','priority_id','user_id','group_id'
             [
                 'name' => 'name',
                 'label' => trans('field.appellation'),
-            ],
-            [
-                'name' => 'group_id',
-                'label' => trans('field.group'),
-                'entity' => 'group',
-                'attribute' => 'name',
-                'type' => 'select2',
-            ],
-            [
-                'name' => 'manager_id',
-                'label' => trans('field.manager'),
-                'entity' => 'manager',
-                'attribute' => 'name',
-                'type' => 'select2',
-            ],
-            [
-                'name' => 'executor_id',
-                'label' => trans('field.executor'),
-                'entity' => 'executor',
-                'attribute' => 'name',
-                'type' => 'select2',
-            ],
+            ] ,
             [
                 'name' => 'description',
                 'label' => trans('field.description'),
                 'type' => 'textarea',
-            ],
+            ] ,
             [
-                'name' => 'time_laid',
-                'label' => trans('field.laid'),
-            ],
-            [
-                'name' => 'time spend',
-                'label' => trans('field.spent'),
-            ],
-        ]);
-        $this->crud->addField(
-            [
-                'name' => 'status_id',
-                'label' => trans('field.status'),
-                'entity' => 'status',
-                'attribute' => 'name',
+                'name' => 'parent_id',
+                'label' => trans('field.parent'),
                 'type' => 'select2',
-            ],
-            'update'
-        );
+                'entity' => 'parent',
+                'attribute' => 'name',
+            ] ,
+        ]);
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
@@ -94,32 +61,23 @@ class TaskCrudController extends CrudController
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
         $this->crud->addColumns([
-            //'description','time_laid','time_spend','last_time_start','start_status','status_id','priority_id','user_id','group_id'
             [
                 'name' => 'name',
                 'label' => trans('field.appellation'),
-            ],
+            ] ,
             [
-                'name' => 'time_laid',
-                'label' => trans('field.laid'),
-            ],
+                'name' => 'description',
+                'label' => trans('field.description'),
+            ] ,
             [
-                'name' => 'time spend',
-                'label' => trans('field.spent'),
-            ],
-            [
-                'name' => 'start_status',
-                'label' => trans('field.running'),
-                'type' => 'check',
-            ],
-            [
-                'name' => 'status_id',
-                'label' => trans('field.status'),
-                'entity' => 'status',
-                'attribute' => 'name',
+                'name' => 'parent_id',
+                'label' => trans('field.parent'),
                 'type' => 'select',
-            ],
+                'entity' => 'parent',
+                'attribute' => 'name',
+            ] ,
         ]);
+
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function

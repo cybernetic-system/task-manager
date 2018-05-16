@@ -13,4 +13,9 @@ return [
     'status' => 'Статус',
     'description' => 'Описание',
     'symbolic_code' => 'Символьный код',
+    'parent' => 'Родитель',
+    'group' => 'Группа',
+    'assigned_to' => 'Назначить на',
+    'manager' => 'Руководитель',
+    'executor' => 'Исполнитель'
 ];

@@ -15,6 +15,8 @@
           <li><a href="{{ backpack_url('dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
               {{-- tasks --}}
               <li><a href="{{ route('crud.task.index') }}"><i class="fa fa-tasks"></i> <span>{{trans('backpack::sidebar.tasks')}}</span></a></li>
+              {{-- task groups --}}
+              <li><a href="{{ route('crud.task_group.index') }}"><i class="fa fa-object-ungroup"></i> <span>{{trans('backpack::sidebar.task_groups')}}</span></a></li>
               {{-- task statuses --}}
               <li><a href="{{ route('crud.task_status.index') }}"><i class="fa fa-list-ol"></i> <span>{{trans('backpack::sidebar.task_statuses')}}</span></a></li>
               <!-- Users, Roles Permissions -->
