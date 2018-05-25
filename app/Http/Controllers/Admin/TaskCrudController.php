@@ -75,6 +75,13 @@ class TaskCrudController extends CrudController
                 'name' => 'time spend',
                 'label' => trans('field.spent'),
             ],
+            [
+                'name' => 'priority_id',
+                'label' => trans('field.priority'),
+                'entity' => 'priority',
+                'attribute' => 'name',
+                'type' => 'select',
+            ],
         ]);
         $this->crud->addField(
             [
@@ -111,6 +118,13 @@ class TaskCrudController extends CrudController
                 'name' => 'start_status',
                 'label' => trans('field.running'),
                 'type' => 'check',
+            ],
+            [
+                'name' => 'priority_id',
+                'label' => trans('field.priority'),
+                'entity' => 'priority',
+                'attribute' => 'name',
+                'type' => 'select',
             ],
             [
                 'name' => 'status_id',
